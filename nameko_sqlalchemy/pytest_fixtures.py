@@ -123,7 +123,7 @@ def db_connection(db_url, model_base, db_engine_options):
 
     yield connection
 
-    model_base.metadata.drop_all()
+    model_base.metadata.drop_all(bind=engine)
     engine.dispose()
 
 
